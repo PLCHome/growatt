@@ -1,0 +1,31 @@
+{
+  "name": "growatt",
+  "version": "0.0.1",
+  "description": "API for the Growatt Shine Webside",
+  "main": "lib/growatt.js",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "debug": "^4.1.1",
+    "form-data": "^3.0.0",
+    "url": "^0.11.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/PLCHome/growatt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/PLCHome/growatt/issues"
+  },
+  "homepage": "https://github.com/PLCHome/growatt#readme",
+  "keywords": [
+    "growatt",
+    "inverter",
+    "io-homecontrol",
+    "gateway",
+    "api"
+  ],
+  "author": {
+    "name": "Chris Traeger"
+  }
+}
