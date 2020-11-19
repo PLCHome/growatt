@@ -1,2 +1,6 @@
 node_modules/*
-test.json
+/test.json
+/test.js
+/test2.js
+/test_plants.json
+/testSharePlant.json
