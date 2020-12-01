@@ -1,3 +1,10 @@
+### 0.0.4: Maintenance Release
+
+**Fixes** 
+
+- improvement for objects not returned from Growatt website
+- Some console.log removed
+
 ### 0.0.3: Maintenance Release
 
 **Enhancements** 
