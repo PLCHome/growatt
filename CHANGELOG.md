@@ -1,3 +1,9 @@
+### 0.0.5: Maintenance Release
+
+**Fixes** 
+
+- npm package version update
+
 ### 0.0.4: Maintenance Release
 
 **Fixes** 
