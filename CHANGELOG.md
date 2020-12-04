@@ -1,6 +1,6 @@
 ### 0.0.5: Maintenance Release
 
-**Fixes** 
+**Enhancements** 
 
 - npm package version update
 
