@@ -1,3 +1,14 @@
+### 0.0.6: Maintenance Release
+
+**Enhancements** 
+
+- npm package version update axios to 0.21.1
+- get the last history data for all devices
+
+**Fixes** 
+
+- fixes a date issue on chart data
+
 ### 0.0.5: Maintenance Release
 
 **Enhancements** 

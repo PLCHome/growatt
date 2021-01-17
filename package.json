@@ -5,7 +5,7 @@
   "main": "lib/growatt.js",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "debug": "^4.3.1",
     "form-data": "^3.0.0",
     "url": "^0.11.0"
