@@ -1,3 +1,9 @@
+### 0.0.7: Maintenance Release
+
+**Fixes** 
+
+- fixes a date issue on inverter history data
+
 ### 0.0.6: Maintenance Release
 
 **Enhancements** 
