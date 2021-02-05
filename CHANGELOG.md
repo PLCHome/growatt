@@ -1,3 +1,9 @@
+### 0.0.8: Maintenance Release
+
+**Fixes** 
+
+- fixes chart data no longer default
+
 ### 0.0.7: Maintenance Release
 
 **Fixes** 
