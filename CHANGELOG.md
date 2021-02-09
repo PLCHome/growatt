@@ -1,3 +1,9 @@
+### 0.0.9: Maintenance Release
+
+**Enhancements** 
+
+- Create a date from the time or calendar structure for last history data for all devices
+
 ### 0.0.8: Maintenance Release
 
 **Fixes** 
