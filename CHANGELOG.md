@@ -1,3 +1,9 @@
+### 0.1.0: Maintenance Release
+
+**Fixes** 
+
+- Create a date from the time or calendar structure for last history data for all devices sometimes not working
+
 ### 0.0.9: Maintenance Release
 
 **Enhancements** 

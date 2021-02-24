@@ -6,3 +6,4 @@ test.js
 node_modules/*
 test_plants.json
 testSharePlant.json
+update.cmd

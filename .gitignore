@@ -4,3 +4,4 @@ node_modules/*
 /test2.js
 /test_plants.json
 /testSharePlant.json
+/update.cmd
