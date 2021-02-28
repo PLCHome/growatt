@@ -23,7 +23,7 @@ set DEBUG=growatt:verbose
 This NODE-Implementation works with promise.
 
 [Understanding javascript promises](https://nodejs.dev/learn/understanding-javascript-promises)
-
+[Modern Asynchronous JavaScript with Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 
 
 ## Simple Impemation
