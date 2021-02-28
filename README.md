@@ -46,7 +46,7 @@ test()
 
 ```
 
-##Log in
+##Login
 
 There are several options for logging in:
 
@@ -187,6 +187,7 @@ ShineWiFi module.
 
 **There is no change to the charts on growatt side. There you can only see a change in the data from the datalogger.**
 
+----------------------------------------------------------------------------------------------------------------------
 
 License (MIT)
 -------------
