@@ -154,7 +154,8 @@ It is the same call for all three login variants.
 It is also possible to have the connection open and to check whether the API is still connected.
 
 ```
-  if growattisConnected()
+  if (growatt.isConnected()) {
+  }
 ```
 
 ----------------------------------------------------------------------------------------------------------------------
