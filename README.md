@@ -21,6 +21,8 @@ set DEBUG=growatt:verbose
 ---
 ### Promise
 This NODE-Implementation works with promise.
+[Understanding javascript promises](https://nodejs.dev/learn/understanding-javascript-promises
+
 
 
 ## Simple Impemation
