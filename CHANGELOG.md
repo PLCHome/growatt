@@ -1,3 +1,9 @@
+### 0.1.1: Maintenance Release
+
+**Enhancements** 
+
+- The readme improved
+
 ### 0.1.0: Maintenance Release
 
 **Fixes** 
