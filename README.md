@@ -101,7 +101,7 @@ With reject an exception is thrown which contains the error object with result l
 
 Parameter | Type | Default | Description
 -------- | -------- | -------- | -------- 
-- | - | - | -
+ |  |  | 
 
 This plugin is intended for testing. On the Growatt page you can view the data from many systems. The problem is that the ID of the system is different here every time you login.
 
