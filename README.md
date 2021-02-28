@@ -1,4 +1,14 @@
-# Growatt API for Inverter
+![Logo](docs/glogo.png)
+
+[![NPM version](http://img.shields.io/npm/v/growatt.svg)](https://www.npmjs.com/package/growatt)
+[![Downloads week](https://img.shields.io/npm/dw/growatt)](https://www.npmjs.com/package/growatt)
+[![Downloads month](https://img.shields.io/npm/dm/growatt)](https://www.npmjs.com/package/growatt)
+[![Downloads year](https://img.shields.io/npm/dy/growatt)](https://www.npmjs.com/package/growatt)
+
+[![NPM](https://nodei.co/npm/growatt.png?downloads=true)](https://nodei.co/npm/growatt/)
+
+
+# ![Logo](docs/growatt.png)rowatt API for Inverter
 
 > this is an Node for the API on the Growatt&copy; Shine Webserver.
 > (Shine provided by Growatt&copy;. I'm not affiliated.)
@@ -23,6 +33,7 @@ set DEBUG=growatt:verbose
 This NODE-Implementation works with promise.
 
 [Understanding javascript promises](https://nodejs.dev/learn/understanding-javascript-promises)
+
 [Modern Asynchronous JavaScript with Async and Await](https://nodejs.dev/learn/modern-asynchronous-javascript-with-async-and-await)
 
 
