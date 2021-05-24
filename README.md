@@ -41,13 +41,14 @@ This NODE-Implementation works with promise.
 
 ```
 "use strict"
-const growatt = require('growatt')
+const api = require('growatt')
 
 const user="xxx"
 const passwort="xx"
 const options={}
 
 async function test() {
+  const growatt = new api()
   let login = await growatt.login(user,passwort).catch(e => {console.log(e)})
   console.log('login:',login)
   let getAllPlantData = await growatt.getAllPlantData(options).catch(e => {console.log(e)})
@@ -58,6 +59,15 @@ async function test() {
 
 test()
 
+```
+## Constructor
+
+There are no options for the constructor.
+Please note that you have to create an instance since version 0.2.0.
+
+```
+const api = require('growatt')
+const growatt = new api()
 ```
 
 ## Login

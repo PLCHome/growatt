@@ -1,3 +1,9 @@
+### 0.2.0: Maintenance Release
+
+**Enhancements** 
+
+- API changed from function collection to class and Axios session.
+
 ### 0.1.1: Maintenance Release
 
 **Enhancements** 
