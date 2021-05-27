@@ -48,7 +48,7 @@ const passwort="xx"
 const options={}
 
 async function test() {
-  const growatt = new api()
+  const growatt = new api({})
   let login = await growatt.login(user,passwort).catch(e => {console.log(e)})
   console.log('login:',login)
   let getAllPlantData = await growatt.getAllPlantData(options).catch(e => {console.log(e)})
@@ -62,8 +62,21 @@ test()
 ```
 ## Constructor
 
-There are no options for the constructor.
 Please note that you have to create an instance since version 0.2.0.
+
+Parameter | Type | Default | Description
+-------- | -------- | -------- | -------- 
+config | Object | See below | Controls the processing
+
+The constructor has a config object as parameter. This is optional.
+
+### Config
+
+config | Type | Default | Description
+-------- | -------- | -------- | -------- 
+timeout | Integer | 5000 | Session timeout in ms.|
+headers | Object | {} | custom header like {'X-Custom-Header': 'foobar'}.
+
 
 ```
 const api = require('growatt')
@@ -126,7 +139,7 @@ I needed it so that I could see how the messages to the different inverters are 
 
 Parameter | Type | Default | Description
 -------- | -------- | -------- | -------- 
-option | Objcet | See below | Controls the processing
+option | Object | See below | Controls the processing
 
 This function knows the individual types of the inverter and calls up the data.
 
@@ -137,11 +150,11 @@ This function can be controlled via an option so that you don't always have to c
 
 Option | Type | Default | Description
 -------- | -------- | -------- | -------- 
-plantData | Boolean | true | True calls the description dataset of the plant.|
-deviceData | Boolean | true | True calls the description dataset of the plantdevice.|
-weather | Boolean | true | True calls the weather dataset of the plant.|
-plantId | Integer | undefined | The ID of a plant. So that the output can be restricted. Attention, the ID is constantly changing on demologin.|
-totalData | Boolean | true | Retrieves the data integrals. The sums since start time.|
+plantData | Boolean | true | True calls the description dataset of the plant.
+deviceData | Boolean | true | True calls the description dataset of the plantdevice.
+weather | Boolean | true | True calls the weather dataset of the plant.
+plantId | Integer | undefined | The ID of a plant. So that the output can be restricted. Attention, the ID is constantly changing on demologin.
+totalData | Boolean | true | Retrieves the data integrals. The sums since start time.
 statusData | Boolean | true | This is not available for all systems. Here, the current operating status, fuel injection, battery charge and generation is called up. However, the data is also contained in historyLast.
 deviceTyp | Boolean | false | Add the device typ to the Output.
 historyLast | Boolean | true | The last data record from the system history table is called up here.

@@ -1,3 +1,9 @@
+### 0.2.2: Maintenance Release
+
+**Enhancements** 
+
+- timeout increased and config object built into constructor
+
 ### 0.2.1: Maintenance Release
 
 **Fixes** 
