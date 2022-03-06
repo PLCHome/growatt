@@ -76,6 +76,7 @@ config | Type | Default | Description
 -------- | -------- | -------- | -------- 
 timeout | Integer | 5000 | Session timeout in ms.|
 headers | Object | {} | custom header like {'X-Custom-Header': 'foobar'}.
+lifeSignCallback | function | undefined | Called before each Axios call.
 
 
 ```

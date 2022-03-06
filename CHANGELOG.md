@@ -1,3 +1,9 @@
+### 0.2.4: Maintenance Release
+
+**Enhancements** 
+
+- lifeSignCallback added
+
 ### 0.2.3: Maintenance Release
 
 **Enhancements** 
@@ -6,8 +12,6 @@
 - Error output: if the key has expired, requests are forwarded with an error code, which is now in the reject message
 - Update the includes
 - Added "validateCode" to login object
-
-
 
 ### 0.2.2: Maintenance Release
 
