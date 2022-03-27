@@ -1,3 +1,12 @@
+### 0.2.5: Maintenance Release
+
+**Enhancements**
+
+- make the source a little prettier
+- added Test and Release
+- solve a loop problem: used i in inner and outer loop
+- solve a sentry problem: undefined object
+
 ### 0.2.4: Maintenance Release
 
 **Enhancements**
