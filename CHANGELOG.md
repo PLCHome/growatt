@@ -1,12 +1,12 @@
 ### 0.2.4: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - lifeSignCallback added
 
 ### 0.2.3: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - Improved error handling
 - Error output: if the key has expired, requests are forwarded with an error code, which is now in the reject message
@@ -15,88 +15,90 @@
 
 ### 0.2.2: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - timeout increased and config object built into constructor
 
 ### 0.2.1: Maintenance Release
 
-**Fixes** 
+**Fixes**
 
 - spelling mistakes
 
 ### 0.2.0: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - API changed from function collection to class and Axios session.
 
 ### 0.1.1: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - The readme improved
 
 ### 0.1.0: Maintenance Release
 
-**Fixes** 
+**Fixes**
 
 - Create a date from the time or calendar structure for last history data for all devices sometimes not working
 
 ### 0.0.9: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - Create a date from the time or calendar structure for last history data for all devices
 
 ### 0.0.8: Maintenance Release
 
-**Fixes** 
+**Fixes**
 
 - fixes chart data no longer default
 
 ### 0.0.7: Maintenance Release
 
-**Fixes** 
+**Fixes**
 
 - fixes a date issue on inverter history data
 
 ### 0.0.6: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - npm package version update axios to 0.21.1
 - get the last history data for all devices
 
-**Fixes** 
+**Fixes**
 
 - fixes a date issue on chart data
 
 ### 0.0.5: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
 
 - npm package version update
 
 ### 0.0.4: Maintenance Release
 
-**Fixes** 
+**Fixes**
 
 - improvement for objects not returned from Growatt website
 - Some console.log removed
 
 ### 0.0.3: Maintenance Release
 
-**Enhancements** 
+**Enhancements**
+
 - sharePlantLogin: Login with the plant share key.
 - getAllPlantData and getAllPlantDeviceData: options added "deviceTyp default false"
 - Inv/MIX/TLX get..ChartLast added for the last chart value for the missing Status data function
   new options:chartLast default true, options.chartLastDate defalut the date
-            chartLastArrayAsJson default true, chartLastArray default false
+  chartLastArrayAsJson default true, chartLastArray default false
 
 ### 0.0.2: Initial Release
 
-**Enhancements** 
+**Enhancements**
+
 - getAllPlantData and getAllPlantDeviceData: options added for selective api calls.
 
 ### 0.0.0: Initial Release

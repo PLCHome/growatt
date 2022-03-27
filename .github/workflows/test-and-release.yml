@@ -1,0 +1,109 @@
+name: Test and Release
+
+# Run this job on all pushes and pull requests
+# as well as tags with a semantic version
+on:
+  push:
+    branches:
+      - '*'
+    tags:
+      # normal versions
+      - 'v[0-9]+.[0-9]+.[0-9]+'
+      # pre-releases
+      - 'v[0-9]+.[0-9]+.[0-9]+-**'
+
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  # Performs quick checks before the expensive test runs
+  check-and-lint:
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source Code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Lint source code
+        run: npm run lint
+
+      - name: Test package files
+        run: npm run test:package
+
+  # Runs adapter tests on all supported node versions and OSes
+  adapter-tests:
+    needs: [check-and-lint]
+    if: contains(github.event.head_commit.message, '[skip ci]') == false
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout source Code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Run integration tests (unix only)
+        if: startsWith(runner.OS, 'windows') == false
+        run: DEBUG=testing:* npm run test:integration
+
+      - name: Run integration tests (windows only)
+        if: startsWith(runner.OS, 'windows')
+        run: set DEBUG=testing:* & npm run test:integration
+
+  # Deploys the final package to NPM
+  deploy:
+    needs: [adapter-tests]
+    # Trigger this step only when a commit on master is tagged with a version number
+    if: |
+      contains(github.event.head_commit.message, '[skip ci]') == false &&
+      github.event_name == 'push' &&
+      github.event.base_ref == 'refs/heads/master' &&
+      startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source Code
+        uses: actions/checkout@v2
+
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14.x
+
+      - name: Install Dependencies
+        uses: bahmutov/npm-install@v1
+
+      - name: Publish package to npm
+        uses: JS-DevTools/npm-publish@v1
+        with:
+          token: ${{ secrets.npm }}
+
+  # Dummy job for skipped builds - without this, github reports the build as failed
+  skip-ci:
+    if: contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Skip build
+        run: echo "Build skipped!"
