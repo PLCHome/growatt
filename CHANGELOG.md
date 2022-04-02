@@ -1,3 +1,10 @@
+### 0.2.7: Maintenance Release
+
+**Enhancements**
+
+- added option historyAll
+- removed chart
+
 ### 0.2.5: Maintenance Release
 
 **Enhancements**
