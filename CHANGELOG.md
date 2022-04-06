@@ -1,3 +1,10 @@
+### 0.2.8: Maintenance Release
+
+**Enhancements**
+
+- added new speedup method to readme
+- remove duplicate code for better maintenance
+
 ### 0.2.7: Maintenance Release
 
 **Enhancements**

@@ -198,7 +198,28 @@ It is also possible to have the connection open and to check whether the API is 
 
 ---
 
-# Speedup data interval
+## Speedup data interval new method
+
+- Open the ShinePhone app
+- Click on attachment below
+- Top right +, then list data loggers
+- Click on existing data logger
+- Configure data logger
+- Wireless hotspot mode
+- Put the stick in AP mode
+- Connect to Wifi hotspot, PW 123456789 ? <- check again
+- Continue
+- Advanced
+- Time setting
+- Interval to 1
+- Enter password growattYYYYMMDD (e.g.growatt20220209)
+- Unlock
+- Click and apply changes
+- Exit hotspot mode
+
+---
+
+## Speedup data interval old method
 
 ## You can set the logger interval from 5 minutes to 1 minute
 
