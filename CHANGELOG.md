@@ -1,3 +1,9 @@
+### 0.2.9: Maintenance Release
+
+**Fixes**
+
+- Typ inv was missing in desission for total data and history data
+
 ### 0.2.8: Maintenance Release
 
 **Enhancements**
