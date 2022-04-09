@@ -1,3 +1,9 @@
+### 0.2.10: Maintenance Release
+
+**Fixes**
+
+- historyAll may not work
+
 ### 0.2.9: Maintenance Release
 
 **Fixes**
