@@ -1,3 +1,9 @@
+### 0.2.11: Maintenance Release
+
+**Fixes**
+
+- https rejectUnauthorized false
+
 ### 0.2.10: Maintenance Release
 
 **Fixes**
