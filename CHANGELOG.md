@@ -1,3 +1,9 @@
+### 0.2.12: Maintenance Release
+
+**Fixes**
+
+- JSON loopkiller
+
 ### 0.2.11: Maintenance Release
 
 **Fixes**
