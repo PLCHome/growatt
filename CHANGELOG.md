@@ -1,3 +1,9 @@
+### 0.2.14: Maintenance Release
+
+**Fixes**
+
+- LINT
+
 ### 0.2.13: Maintenance Release
 
 **Fixes**
