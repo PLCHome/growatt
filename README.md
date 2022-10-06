@@ -78,11 +78,12 @@ The constructor has a config object as parameter. This is optional.
 
 ### Config
 
-| config           | Type     | Default   | Description                                       |
-| ---------------- | -------- | --------- | ------------------------------------------------- |
-| timeout          | Integer  | 5000      | Session timeout in ms.                            |
-| headers          | Object   | {}        | custom header like {'X-Custom-Header': 'foobar'}. |
-| lifeSignCallback | function | undefined | Called before each Axios call.                    |
+| config           | Type     | Default                      | Description                                       |
+| ---------------- | -------- | ---------------------------- | ------------------------------------------------- |
+| server           | String   | 'https://server.growatt.com' | The Growatt server                                |
+| timeout          | Integer  | 5000                         | Session timeout in ms.                            |
+| headers          | Object   | {}                           | custom header like {'X-Custom-Header': 'foobar'}. |
+| lifeSignCallback | function | undefined                    | Called before each Axios call.                    |
 
 ```
 const api = require('growatt')
@@ -187,7 +188,7 @@ It is the same call for all three login variants.
   let logout = await growatt.logout().catch(e => {console.log(e)})
 ```
 
-## isConnected()
+## isConnected
 
 It is also possible to have the connection open and to check whether the API is still connected.
 
@@ -195,6 +196,131 @@ It is also possible to have the connection open and to check whether the API is 
   if (growatt.isConnected()) {
   }
 ```
+
+## getDataLoggers
+
+Returns a list of data loggers with information
+
+```
+  let loggers = await growatt.getDataLoggers().catch(e => {console.log(e)})
+```
+
+## getDataLoggerRegister
+
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| dataLogSn | String | -       | The serial number     |
+| addr      | Integer | -       | The register     |
+
+Returns the value of a datalogger register
+
+```
+  //api.LOGGERREGISTER.INTERVAL
+  //api.LOGGERREGISTER.SERVERIP
+  //api.LOGGERREGISTER.SERVERPORT
+  let register = await growatt.getDataLoggerRegister(loggers[0].sn, api.LOGGERREGISTER.INTERVAL).catch(e => {console.log(e)})
+```
+
+The answer is an object
+
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| msg       | String | The value |
+| success   | String | Ok or bad |
+
+## setDataLoggerRegister
+
+*Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk.*
+
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| dataLogSn | String | -       | The serial number     |
+| addr      | Integer | -       | The register     |
+| value     | String | -       | The value to set  |
+
+Sets the value of a datalogger register
+
+```
+  //api.LOGGERREGISTER.INTERVAL
+  //api.LOGGERREGISTER.SERVERIP
+  //api.LOGGERREGISTER.SERVERPORT
+  let res = await growatt.setDataLoggerRegister(loggers[0].sn, api.LOGGERREGISTER.INTERVAL, 1).catch(e => {console.log(e)})
+```
+
+The answer is an object
+
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| msg       | String | An information |
+| success   | String | Ok or bad |
+
+## setDataLoggerParam
+
+*Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk.*
+
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| dataLogSn | String | -       | The serial number     |
+| paramType  | Integer | -       | The function number     |
+| value     | String | -       | The value to set  |
+
+Sets the value of the datalogger 
+
+```
+  //api.LOGGERFUNCTION.INTSERVERIP
+  //api.LOGGERFUNCTION.SERVERNAME
+  //api.LOGGERFUNCTION.SERVERPORT
+  let res = await growatt.setDataLoggerRegister(loggers[0].sn, api.LOGGERFUNCTION.SERVERPORT, 5279).catch(e => {console.log(e)})
+```
+
+The answer is an object
+
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| msg       | String | An information |
+| success   | String | Ok or bad |
+
+## setDataLoggerRestart
+
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| dataLogSn | String | -       | The serial number     |
+
+Sets the value of the datalogger 
+
+```
+  //api.LOGGERFUNCTION.INTSERVERIP
+  //api.LOGGERFUNCTION.SERVERNAME
+  //api.LOGGERFUNCTION.SERVERPORT
+  let res = await growatt.setDataLoggerRestart(loggers[0].sn).catch(e => {console.log(e)})
+```
+
+The answer is an object
+
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| msg       | String | An information |
+| success   | String | Ok or bad |
+
+## checkDataLoggerFirmware
+
+| Parameter | Type   | Default | Description |
+| --------- | ------ | ------- | ----------- |
+| type | Integer | -       | The logger typ number     |
+| version | String | -       | The logger firmware version    |
+
+It is checked whether an update is available
+
+```
+  let res = await growatt.checkDataLoggerFirmware(loggers[0].deviceTypeIndicate,loggers[0].firmwareVersion).catch(e => {console.log(e)})
+```
+
+The answer is an object
+
+| Parameter | Type   | Description  |
+| --------- | ------ | ------------ |
+| msg       | String | An information |
+| success   | String | Ok or bad |
 
 ---
 
@@ -218,34 +344,6 @@ It is also possible to have the connection open and to check whether the API is 
 - Exit hotspot mode
 
 ---
-
-## Speedup data interval old method
-
-## You can set the logger interval from 5 minutes to 1 minute
-
-Remove the rubber plug of the KEY button from ShineWiFi-S, and short press the button inside. The blue LED
-will light up. Use your phone or computer to connect to the wireless network emitted by the
-ShineWiFi-S module. The network name/SSID is the serial number of the ShineWiFi-S
-module.
-
-## Login Page
-
-After the connection is successfully established, open the web browser on your phone or
-computer and type 192.168.10.100 in the address bar. The username is admin, the
-default password is 12345678.
-![Login Page](docs/login.png)
-
-## Advanced Settings
-
-Change the data interval time to 1 minute
-![Advanced Settings](docs/advancedsettings.png)
-
-## System Restart
-
-Restart your ShineWiFi-S module on this page, click “Restart Immediate” to
-enable the new settings you just made and logout from the internal webserver of your
-ShineWiFi module.
-![System Restart](docs/restart.png)
 
 **There is no change to the charts on growatt side. There you can only see a change in the data from the datalogger.**
 

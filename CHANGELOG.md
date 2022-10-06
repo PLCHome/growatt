@@ -1,3 +1,10 @@
+### 0.3.0: Maintenance Release
+
+**Enhancements**
+
+- other Server over options
+- Data logger settings can be called up and changed.
+
 ### 0.2.14: Maintenance Release
 
 **Fixes**
