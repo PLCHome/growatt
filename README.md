@@ -207,10 +207,10 @@ Returns a list of data loggers with information
 
 ## getDataLoggerRegister
 
-| Parameter | Type   | Default | Description |
-| --------- | ------ | ------- | ----------- |
-| dataLogSn | String | -       | The serial number     |
-| addr      | Integer | -       | The register     |
+| Parameter | Type    | Default | Description       |
+| --------- | ------- | ------- | ----------------- |
+| dataLogSn | String  | -       | The serial number |
+| addr      | Integer | -       | The register      |
 
 Returns the value of a datalogger register
 
@@ -223,20 +223,20 @@ Returns the value of a datalogger register
 
 The answer is an object
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
-| msg       | String | The value |
-| success   | String | Ok or bad |
+| Parameter | Type   | Description |
+| --------- | ------ | ----------- |
+| msg       | String | The value   |
+| success   | String | Ok or bad   |
 
 ## setDataLoggerRegister
 
-*Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk.*
+_Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk._
 
-| Parameter | Type   | Default | Description |
-| --------- | ------ | ------- | ----------- |
-| dataLogSn | String | -       | The serial number     |
-| addr      | Integer | -       | The register     |
-| value     | String | -       | The value to set  |
+| Parameter | Type    | Default | Description       |
+| --------- | ------- | ------- | ----------------- |
+| dataLogSn | String  | -       | The serial number |
+| addr      | Integer | -       | The register      |
+| value     | String  | -       | The value to set  |
 
 Sets the value of a datalogger register
 
@@ -249,22 +249,22 @@ Sets the value of a datalogger register
 
 The answer is an object
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
+| Parameter | Type   | Description    |
+| --------- | ------ | -------------- |
 | msg       | String | An information |
-| success   | String | Ok or bad |
+| success   | String | Ok or bad      |
 
 ## setDataLoggerParam
 
-*Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk.*
+_Warning an incorrect register with the wrong value can destroy or damage the logger. Writing to the Datenlohgger is at your own risk._
 
-| Parameter | Type   | Default | Description |
-| --------- | ------ | ------- | ----------- |
-| dataLogSn | String | -       | The serial number     |
-| paramType  | Integer | -       | The function number     |
-| value     | String | -       | The value to set  |
+| Parameter | Type    | Default | Description         |
+| --------- | ------- | ------- | ------------------- |
+| dataLogSn | String  | -       | The serial number   |
+| paramType | Integer | -       | The function number |
+| value     | String  | -       | The value to set    |
 
-Sets the value of the datalogger 
+Sets the value of the datalogger
 
 ```
   //api.LOGGERFUNCTION.INTSERVERIP
@@ -275,18 +275,18 @@ Sets the value of the datalogger
 
 The answer is an object
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
+| Parameter | Type   | Description    |
+| --------- | ------ | -------------- |
 | msg       | String | An information |
-| success   | String | Ok or bad |
+| success   | String | Ok or bad      |
 
 ## setDataLoggerRestart
 
-| Parameter | Type   | Default | Description |
-| --------- | ------ | ------- | ----------- |
-| dataLogSn | String | -       | The serial number     |
+| Parameter | Type   | Default | Description       |
+| --------- | ------ | ------- | ----------------- |
+| dataLogSn | String | -       | The serial number |
 
-Sets the value of the datalogger 
+Sets the value of the datalogger
 
 ```
   //api.LOGGERFUNCTION.INTSERVERIP
@@ -297,17 +297,17 @@ Sets the value of the datalogger
 
 The answer is an object
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
+| Parameter | Type   | Description    |
+| --------- | ------ | -------------- |
 | msg       | String | An information |
-| success   | String | Ok or bad |
+| success   | String | Ok or bad      |
 
 ## checkDataLoggerFirmware
 
-| Parameter | Type   | Default | Description |
-| --------- | ------ | ------- | ----------- |
-| type | Integer | -       | The logger typ number     |
-| version | String | -       | The logger firmware version    |
+| Parameter | Type    | Default | Description                 |
+| --------- | ------- | ------- | --------------------------- |
+| type      | Integer | -       | The logger typ number       |
+| version   | String  | -       | The logger firmware version |
 
 It is checked whether an update is available
 
@@ -317,10 +317,10 @@ It is checked whether an update is available
 
 The answer is an object
 
-| Parameter | Type   | Description  |
-| --------- | ------ | ------------ |
+| Parameter | Type   | Description    |
+| --------- | ------ | -------------- |
 | msg       | String | An information |
-| success   | String | Ok or bad |
+| success   | String | Ok or bad      |
 
 ---
 

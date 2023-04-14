@@ -1,3 +1,14 @@
+### 0.4.0: Maintenance Release
+
+**Enhancements**
+
+- Status data now also from TLX/TLX
+
+**Fixes**
+
+- TLX Hybrid is now working
+- If there are different inverters, these are now shown
+
 ### 0.3.0: Maintenance Release
 
 **Enhancements**
