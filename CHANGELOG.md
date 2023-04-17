@@ -1,8 +1,14 @@
+### 0.4.1: Maintenance Release
+
+**Fixes**
+
+- calendar structure was not always changed to timestamp
+
 ### 0.4.0: Maintenance Release
 
 **Enhancements**
 
-- Status data now also from TLX/TLX
+- Status data now also from TLX/TLXH
 
 **Fixes**
 
