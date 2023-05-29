@@ -1,3 +1,33 @@
+### 0.5.0: Maintenance Release
+
+**Fixes**
+
+- replaced german typ against type
+
+**Enhancements**
+
+- Split into multiple JS files
+- Added new property "growattType" inside Serial Number object. So that the settings for the type can be queried.
+- new internal function comInverter
+- added to readme.md
+  - new function getInverterCommunication
+  - new function getInverterSetting
+  - new function setInverterSetting
+- Reading and writing of inverter configuration settings
+  - mix
+    - Time
+    - Grid first
+    - Battery first
+    - LoadFirst
+    - Failsafe
+    - PV active power rate
+    - Backflow setting
+      - Backflow setting power
+    - EPSOn
+  - tlx/tlxh
+    - Time
+    - PV active power rate
+
 ### 0.4.1: Maintenance Release
 
 **Fixes**

@@ -30,6 +30,7 @@ This API supported debugging. you have to set the environment variable DEBUG
 set DEBUG=growatt:*
 set DEBUG=growatt:api
 set DEBUG=growatt:verbose
+set DEBUG=growatt:queue
 ```
 
 ---
@@ -161,7 +162,7 @@ This function can be controlled via an option so that you don't always have to c
 | plantId              | Integer    | undefined | The ID of a plant. So that the output can be restricted. Attention, the ID is constantly changing on demologin.                                                                            |
 | totalData            | Boolean    | true      | Retrieves the data integrals. The sums since start time.                                                                                                                                   |
 | statusData           | Boolean    | true      | This is not available for all systems. Here, the current operating status, fuel injection, battery charge and generation is called up. However, the data is also contained in historyLast. |
-| deviceTyp            | Boolean    | false     | Add the device typ to the Output.                                                                                                                                                          |
+| deviceTyp            | Boolean    | false     | Add the device type to the Output.                                                                                                                                                         |
 | historyLast          | Boolean    | true      | The last data record from the system history table is called up here.                                                                                                                      |
 | historyAll           | Boolean    | false     | All data records from the system history table is called up here.                                                                                                                          |
 | historyLastStartDate | new Date() | tomorrow  | The start time for retrieving the history.                                                                                                                                                 |
@@ -306,7 +307,7 @@ The answer is an object
 
 | Parameter | Type    | Default | Description                 |
 | --------- | ------- | ------- | --------------------------- |
-| type      | Integer | -       | The logger typ number       |
+| type      | Integer | -       | The logger type number      |
 | version   | String  | -       | The logger firmware version |
 
 It is checked whether an update is available
@@ -321,6 +322,142 @@ The answer is an object
 | --------- | ------ | -------------- |
 | msg       | String | An information |
 | success   | String | Ok or bad      |
+
+## getInverterCommunication
+
+_Warning: An incorrect value can lead to the destruction of the inverter. The writing to the inverter is at your own risk._
+
+| Parameter | Type   | Default | Description                         |
+| --------- | ------ | ------- | ----------------------------------- |
+| type      | String | -       | The Invertr type from the SN object |
+
+This function does not require a connection to the server.
+The answer is an object
+
+| Parameter   | Type        | Description       |
+| ----------- | ----------- | ----------------- |
+| <func name> | Object conf | The configuration |
+
+<func name> Object conf
+
+| Parameter | Type         | Description                                                                                       |
+| --------- | ------------ | ------------------------------------------------------------------------------------------------- |
+| name      | String       | The term for it                                                                                   |
+| param     | Object param | The list of the Params                                                                            |
+| subRead   | String array | If specified, further objects must be loaded in order to receive the object completely            |
+| isSubread | String       | It is listed as subRead in another config. The param is empty, it is defined for subRead objects. |
+
+Attention different inverters have different parameters. Therefore, the parameters cannot be crossed under the types
+Object param
+
+| Parameter | Type   | Description     |
+| --------- | ------ | --------------- |
+| name      | String | The term for it |
+| type      | String | The valuetype   |
+
+The Value Types from the Parameter
+
+| valuetype   | Type            | Description     |
+| ----------- | --------------- | --------------- |
+| INUM_0_100  | Integer         | value 0 ... 100 |
+| BOOL        | Boolean         | true/false      |
+| STIME_H_MIN | String for Time | format 'HH:MI'  |
+| DATETIME    | Integer         | Date.timeOf()   |
+
+```
+  let a = allPlantData[Object.keys(allPlantData)[0]].devices;
+  let sn = Object.keys(a)[0];
+  let type = a[sn].growattType;
+  let com = Growatt.getInverterCommunication (type);
+```
+
+## getInverterSetting
+
+_Warning: An incorrect value can lead to the destruction of the inverter. The writing to the inverter is at your own risk._
+
+| Parameter | Type    | Default | Description             |
+| --------- | ------- | ------- | ----------------------- |
+| type      | Integer | -       | The logger type number  |
+| func      | String  | -       | The <func name> to read |
+| serialNum | String  | -       | Inverters Serial number |
+
+Returns a list of the Values as defined
+
+The answer is an object
+
+| Parameter | Type   | Description         |
+| --------- | ------ | ------------------- |
+| msg       | String | An information      |
+| success   | String | Ok or bad           |
+| param<..> | each   | From the Param List |
+
+With some inverters, it is not always possible to read the data due to the connection via RS232. If a process is in progress, the second query is rejected.
+Therefore, the requests are placed in a queue and processed sequentially. If the inverter does not send any data but reports success, the request is repeated.
+
+```
+  // Growatt must be connected
+
+  const allPlantData = await Growatt.getAllPlantData(options).catch(e => {console.log(e);});
+  console.log('Fatched all Data');
+  if (allPlantData) {
+    let a = allPlantData[Object.keys(allPlantData)[0]].devices;
+    let sn = Object.keys(a)[0];
+    let type = a[sn].growattType;
+    let com = Growatt.getInverterCommunication (type);
+    console.log(com);
+    let run = []
+    Object.keys(com).forEach(name => {
+        if (com[name].subRead) {
+          com[name].subRead.forEach(name => {
+                                            run.push(Growatt.getInverterSetting(type, name, sn)
+              .then(r => {
+                console.log(name,r);
+              })
+              .catch(e => {
+                console.log(name,e);
+          }))})
+        }
+        if (!com[name].isSubread) {
+          run.push(Growatt.getInverterSetting(type, name, sn)
+          .then(r => {
+            console.log(name,r);
+          })
+          .catch(e => {
+            console.log(name,e);
+          }))
+        }
+    })
+    await Promise.all(run)
+  }
+```
+
+## setInverterSetting
+
+_Warning: An incorrect value can lead to the destruction of the inverter. The writing to the inverter is at your own risk._
+
+| Parameter | Type    | Default | Description             |
+| --------- | ------- | ------- | ----------------------- |
+| type      | Integer | -       | The logger type number  |
+| func      | String  | -       | The <func name> to read |
+| serialNum | String  | -       | Inverters Serial number |
+| val       | Object  | -       | values to set           |
+
+The val object
+
+| Parameter | Type | Description         |
+| --------- | ---- | ------------------- |
+| param<..> | each | From the Param List |
+
+With some inverters, it is not always possible to read the data due to the connection via RS232. If a process is in progress, the second query is rejected.
+Therefore, the requests are placed in a queue and processed sequentially. If the inverter does not send any data but reports success, the request is repeated.
+
+```
+    let a = allPlantData[Object.keys(allPlantData)[0]].devices;
+    let sn = Object.keys(a)[0];
+    let type = a[sn].growattType;
+    let v = {param1: (new Date()).getTime()}
+    await Growatt.setInverterSetting(typ, 'time', sn, v);
+```
 
 ---
 
