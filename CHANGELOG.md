@@ -1,3 +1,9 @@
+### 0.5.2: Maintenance Release
+
+**Fixes**
+
+- settings on TLX may not work
+
 ### 0.5.1: Maintenance Release
 
 **Fixes**
