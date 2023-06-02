@@ -1,3 +1,18 @@
+### 0.5.1: Maintenance Release
+
+**Fixes**
+
+- Fixed reading time type
+
+**Enhancements**
+
+- Acceleration through parallel reading of all data
+- New check for inverter on/off parameter
+- Added unit and possible values ​​to parameter object
+- Add reading and writing of inverter configuration settings
+  - mix
+    - Inverter On/Off
+
 ### 0.5.0: Maintenance Release
 
 **Fixes**
