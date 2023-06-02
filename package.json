@@ -1,6 +1,6 @@
 {
   "name": "growatt",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "description": "API for the Growatt Shine Webside",
   "main": "lib/growatt.js",
   "license": "MIT",
