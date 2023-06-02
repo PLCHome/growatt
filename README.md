@@ -350,13 +350,13 @@ The answer is an object
 Attention different inverters have different parameters. Therefore, the parameters cannot be crossed under the types
 Object param
 
-| Parameter | Type   | Optional  | Description     |
-| --------- | ------ | --------  | --------------- |
-| name      | String | no          | The term for it |
-| type      | String | no          | The valuetype   |
-| def       | any    | on not read | If the parameter is not readable, it contains a value for the default value |
-| unit      | String | if known  | The unit of value |
-| values    | Object | if needed | Contains list of translation of values ​​as Object. Key : String. The key is the value that must be passed. The string is an English description for the value. |
+| Parameter | Type   | Optional    | Description                                                                                                                                                     |
+| --------- | ------ | ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name      | String | no          | The term for it                                                                                                                                                 |
+| type      | String | no          | The valuetype                                                                                                                                                   |
+| def       | any    | on not read | If the parameter is not readable, it contains a value for the default value                                                                                     |
+| unit      | String | if known    | The unit of value                                                                                                                                               |
+| values    | Object | if needed   | Contains list of translation of values ​​as Object. Key : String. The key is the value that must be passed. The string is an English description for the value. |
 
 The Value Types from the Parameter
 
