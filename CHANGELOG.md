@@ -1,3 +1,9 @@
+### 0.5.3: Maintenance Release
+
+**Fixes & Enhancements**
+
+- Removed acceleration through parallel reading of all data
+
 ### 0.5.2: Maintenance Release
 
 **Fixes**
