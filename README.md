@@ -165,8 +165,8 @@ This function can be controlled via an option so that you don't always have to c
 | deviceTyp            | Boolean    | false     | Add the device type to the Output.                                                                                                                                                         |
 | historyLast          | Boolean    | true      | The last data record from the system history table is called up here.                                                                                                                      |
 | historyAll           | Boolean    | false     | All data records from the system history table is called up here.                                                                                                                          |
-| historyLastStartDate | new Date() | tomorrow  | The start time for retrieving the history.                                                                                                                                                 |
-| historyLastEndDate   | new Date() | yesterday | The end time for retrieving the history.                                                                                                                                                   |
+| historyLastStartDate | new Date() | yesterday | The start time for retrieving the history.                                                                                                                                                 |
+| historyLastEndDate   | new Date() | tomorrow  | The end time for retrieving the history.                                                                                                                                                   |
 | historyStart         | Integer    | 0         | The server does not send all data for the time range. With the starting index you get the next rows.                                                                                       |
 
 ### The call
