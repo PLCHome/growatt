@@ -1,5 +1,11 @@
 ### 0.5.3: Maintenance Release
 
+**Fixes**
+
+- time setting on TLX may not work
+
+### 0.5.3: Maintenance Release
+
 **Fixes & Enhancements**
 
 - Removed acceleration through parallel reading of all data
