@@ -1,8 +1,8 @@
-### 0.5.3: Maintenance Release
+### 0.5.4: Maintenance Release
 
 **Fixes**
 
-- time setting on TLX may not work
+- time setting on TLX may not work #14 
 
 ### 0.5.3: Maintenance Release
 
