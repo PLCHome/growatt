@@ -25,15 +25,15 @@ jobs:
 
     steps:
       - name: Checkout source Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14.x
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v2
+        uses: bahmutov/npm-install@v1
 
       - name: Lint source code
         run: npm run lint
@@ -55,15 +55,15 @@ jobs:
 
     steps:
       - name: Checkout source Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v2
+        uses: bahmutov/npm-install@v1
 
       - name: Run integration tests (unix only)
         if: startsWith(runner.OS, 'windows') == false
@@ -85,15 +85,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source Code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Use Node.js 14.x
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
           node-version: 14.x
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v2
+        uses: bahmutov/npm-install@v1
 
       - name: Publish package to npm
         uses: JS-DevTools/npm-publish@v1
