@@ -33,7 +33,7 @@ jobs:
           node-version: 14.x
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@v2
 
       - name: Lint source code
         run: npm run lint
@@ -63,7 +63,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@v2
 
       - name: Run integration tests (unix only)
         if: startsWith(runner.OS, 'windows') == false
@@ -93,7 +93,7 @@ jobs:
           node-version: 14.x
 
       - name: Install Dependencies
-        uses: bahmutov/npm-install@v1
+        uses: bahmutov/npm-install@v2
 
       - name: Publish package to npm
         uses: JS-DevTools/npm-publish@v1
