@@ -1,3 +1,9 @@
+### 0.5.6: Maintenance Release
+
+**Fixes**
+
+- No retrieval of the other parameters value possible after parameter error
+
 ### 0.5.5: Maintenance Release
 
 **Fixes**
