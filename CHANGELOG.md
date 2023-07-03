@@ -1,8 +1,14 @@
+### 0.5.5: Maintenance Release
+
+**Fixes**
+
+- Grid first and Battery first setting on MIX may not work
+
 ### 0.5.4: Maintenance Release
 
 **Fixes**
 
-- time setting on TLX may not work #14 
+- time setting on TLX may not work #14
 
 ### 0.5.3: Maintenance Release
 
