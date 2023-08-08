@@ -1,3 +1,10 @@
+### 0.6.0: Maintenance Release
+
+**Enhancements**
+
+- Add switch indexCandI to the config Objekt.
+  - Set to true if your Growatt page Plant is a C&I Plant page with indexbC or plantDo in the Path from the Growatt webinterface.
+
 ### 0.5.6: Maintenance Release
 
 **Fixes**

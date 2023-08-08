@@ -79,12 +79,13 @@ The constructor has a config object as parameter. This is optional.
 
 ### Config
 
-| config           | Type     | Default                      | Description                                       |
-| ---------------- | -------- | ---------------------------- | ------------------------------------------------- |
-| server           | String   | 'https://server.growatt.com' | The Growatt server                                |
-| timeout          | Integer  | 5000                         | Session timeout in ms.                            |
-| headers          | Object   | {}                           | custom header like {'X-Custom-Header': 'foobar'}. |
-| lifeSignCallback | function | undefined                    | Called before each Axios call.                    |
+| config           | Type     | Default                      | Description                                                                                                                   |
+| ---------------- | -------- | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| server           | String   | 'https://server.growatt.com' | The Growatt server                                                                                                            |
+| indexCandI       | Boolean  | false                        | Set to true if your Growatt page Plant is a C&I Plant page with indexbC or plantDo in the Path from the Growatt webinterface. |
+| timeout          | Integer  | 5000                         | Session timeout in ms.                                                                                                        |
+| headers          | Object   | {}                           | custom header like {'X-Custom-Header': 'foobar'}.                                                                             |
+| lifeSignCallback | function | undefined                    | Called before each Axios call.                                                                                                |
 
 ```
 const api = require('growatt')
