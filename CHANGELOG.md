@@ -1,3 +1,9 @@
+### 0.7.0: Maintenance Release
+
+**Enhancements**
+
+- Inverter typ singleBackflow and multipleBackflow added.
+
 ### 0.6.0: Maintenance Release
 
 **Enhancements**
