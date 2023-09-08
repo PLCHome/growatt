@@ -1,3 +1,9 @@
+### 0.7.1: Maintenance Release
+
+**Enhancements**
+
+- Additionally query the status information via the Plant List.
+
 ### 0.7.0: Maintenance Release
 
 **Enhancements**
