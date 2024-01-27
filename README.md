@@ -160,6 +160,8 @@ This function can be controlled via an option so that you don't always have to c
 | plantData            | Boolean    | true      | True calls the description dataset of the plant.                                                                                                                                           |
 | deviceData           | Boolean    | true      | True calls the description dataset of the plantdevice.                                                                                                                                     |
 | weather              | Boolean    | true      | True calls the weather dataset of the plant.                                                                                                                                               |
+| faultlog             | Boolean    | false     | True retrieves the plant's fault logs. An array with the most recent event first is returned.  |
+| faultlogdate         | String     | 'YYYY'    | It is only taken into account if faultlog is true. It must be a string with the date in 'YYYY', 'YYYY-MM', 'YYYY-MM-DD'.  |
 | plantId              | Integer    | undefined | The ID of a plant. So that the output can be restricted. Attention, the ID is constantly changing on demologin.                                                                            |
 | totalData            | Boolean    | true      | Retrieves the data integrals. The sums since start time.                                                                                                                                   |
 | statusData           | Boolean    | true      | This is not available for all systems. Here, the current operating status, fuel injection, battery charge and generation is called up. However, the data is also contained in historyLast. |
@@ -465,6 +467,48 @@ Therefore, the requests are placed in a queue and processed sequentially. If the
 ```
 
 ---
+
+## getNewPlantFaultLog
+
+| Parameter | Type    | Default | Description                                                          |
+| --------- | ------- | ------- | -------------------------------------------------------------------- |
+| plantId   | Integer | -       | The plantId                                                          |
+| date      | String  | 'YYYY'  | It must be a string with the date in 'YYYY', 'YYYY-MM', 'YYYY-MM-DD' |
+| deviceSn  | String  | ''      | Inverters Serial number, can be an empty string to request all       |
+| toPageNum | Integer | 1       | Go to a specific page                                                |
+
+It queries the fault log and returns the posts.
+
+The answer is an object
+
+| Parameter | Type    | Description     |
+| --------- | ------- | --------------- |
+| result    | Integer | 1 => Ok         |
+| obj       | Object  | Response object |
+
+Response object
+
+| Parameter | Type            | Description                       |
+| --------- | --------------- | --------------------------------- |
+| pages     | Integer         | Number of possible pesponse pages |
+| currPage  | Integer         | Number of current pesponse page   |
+| datas     | Array of object | Message objects                   |
+| count     | Integer         | Messages in the array             |
+
+Response datas object as array
+
+| Parameter     | Type          | Description                                            |
+| ------------- | ------------- | ------------------------------------------------------ |
+| deviceType    | String        | Description of which device type                       |
+| eventId       | String        | Code for the event                                     |
+| batSn         | String        | Serial number of the battery if the event came from it |
+| solution      | String        | A suggestion from Growatt                              |
+| eventSolution | String        | Another suggestion from Growatt                        |
+| alias         | String        | The device's alias                                     |
+| eventName     | String        | The name or description of the event                   |
+| sn            | String        | The serial number of the equipment                     |
+| time          | String (date) | When it happened YYYY-MM-DD HH:MI:SS                   |
+| deviceSn      | String        | The serial number of the device                        |
 
 ## Speedup data interval new method
 

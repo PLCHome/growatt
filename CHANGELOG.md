@@ -6,6 +6,7 @@
   - max
     - Time
     - PV active power rate
+- a question to query logs #19
 
 ### 0.7.1: Maintenance Release
 
