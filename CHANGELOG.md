@@ -1,3 +1,12 @@
+### 0.7.2: Maintenance Release
+
+**Enhancements**
+
+- Reading and writing of inverter configuration settings
+  - max
+    - Time
+    - PV active power rate
+
 ### 0.7.1: Maintenance Release
 
 **Enhancements**
