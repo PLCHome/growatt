@@ -1,3 +1,9 @@
+### 0.7.3: Maintenance Release
+
+**Enhancements**
+
+- With multiple backflow total data and status data were swapped.
+
 ### 0.7.2: Maintenance Release
 
 **Enhancements**
