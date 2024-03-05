@@ -121,7 +121,7 @@ With reject an exception is thrown which contains the error object with result l
 You can get the key by having an email sent to you on the Grwatt website for a third party to display the data. The key is the combination of numbers and letters in the link. It has 96 characters.
 
 ```
-  let login = await Growatt.sharePlantLogin(key).catch(e => {console.log(e)})
+  let login = await growatt.sharePlantLogin(key).catch(e => {console.log(e)})
 ```
 
 With resolve, the response from the website is returned.
@@ -140,7 +140,7 @@ This plugin is intended for testing. On the Growatt page you can view the data f
 I needed it so that I could see how the messages to the different inverters are structured.
 
 ```
-  let login = await Growatt.demoLogin().catch(e => {console.log(e)})
+  let login = await growatt.demoLogin().catch(e => {console.log(e)})
 ```
 
 ## Get all plant data
@@ -376,7 +376,7 @@ The Value Types from the Parameter
   let a = allPlantData[Object.keys(allPlantData)[0]].devices;
   let sn = Object.keys(a)[0];
   let type = a[sn].growattType;
-  let com = Growatt.getInverterCommunication (type);
+  let com = growatt.getInverterCommunication (type);
 ```
 
 ## getInverterSetting
@@ -405,13 +405,13 @@ Therefore, the requests are placed in a queue and processed sequentially. If the
 ```
   // Growatt must be connected
 
-  const allPlantData = await Growatt.getAllPlantData(options).catch(e => {console.log(e);});
+  const allPlantData = await growatt.getAllPlantData(options).catch(e => {console.log(e);});
   console.log('Fatched all Data');
   if (allPlantData) {
     let a = allPlantData[Object.keys(allPlantData)[0]].devices;
     let sn = Object.keys(a)[0];
     let type = a[sn].growattType;
-    let com = Growatt.getInverterCommunication (type);
+    let com = growatt.getInverterCommunication (type);
     console.log(com);
     let run = []
     Object.keys(com).forEach(name => {
@@ -464,7 +464,7 @@ Therefore, the requests are placed in a queue and processed sequentially. If the
     let sn = Object.keys(a)[0];
     let type = a[sn].growattType;
     let v = {param1: (new Date()).getTime()}
-    await Growatt.setInverterSetting(typ, 'time', sn, v);
+    await growatt.setInverterSetting(typ, 'time', sn, v);
 ```
 
 ---
