@@ -1,3 +1,12 @@
+### 0.7.4: Maintenance Release
+
+**Fixes**
+
+- no connection can be established password must now be transferred as MD5 hash.
+- cookie issue
+- eslint adjustments
+- update all modules
+
 ### 0.7.3: Maintenance Release
 
 **Enhancements**
