@@ -13,7 +13,7 @@
   },
   "devDependencies": {
     "chai": "^5.1.1",
-    "eslint": "^9.6.0",
+    "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",
@@ -27,8 +27,8 @@
     "url": "https://github.com/PLCHome/growatt.git"
   },
   "scripts": {
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --ext .js",
+    "lint:fix": "eslint . --ext .js --fix",
     "test:package": "mocha test/package --exit",
     "test:integration": "mocha test/integration --exit"
   },
