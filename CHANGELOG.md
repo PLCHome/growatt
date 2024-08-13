@@ -1,3 +1,13 @@
+### 0.7.5: Maintenance Release
+
+**Enhancements**
+
+- Added NOAH.
+
+**Fixes**
+
+- Solved the problem that no inverter list but result 2 was returned in NOAH.
+
 ### 0.7.4: Maintenance Release
 
 **Fixes**
