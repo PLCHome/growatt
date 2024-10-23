@@ -1,3 +1,9 @@
+### 0.7.6: Maintenance Release
+
+**Enhancements**
+
+- Added time slots for TLXH
+
 ### 0.7.5: Maintenance Release
 
 **Enhancements**
