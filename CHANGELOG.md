@@ -3,6 +3,8 @@
 **Enhancements**
 
 - Added time slots for TLXH
+- Added Inverter On Off for TLX und TLXH
+
 
 ### 0.7.5: Maintenance Release
 
