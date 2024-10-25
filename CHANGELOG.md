@@ -4,7 +4,7 @@
 
 - Added time slots for TLXH
 - Added Inverter On Off for TLX und TLXH
-
+- Added feature to enable debug
 
 ### 0.7.5: Maintenance Release
 

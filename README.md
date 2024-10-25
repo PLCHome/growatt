@@ -33,6 +33,41 @@ set DEBUG=growatt:verbose
 set DEBUG=growatt:queue
 ```
 
+In code:
+there are the following functions:
+
+setDebugApi
+
+| Parameter | Type    | Default | Description                                                  |
+| --------- | ------- | ------- | ------------------------------------------------------------ |
+| enable    | boolean |         | "true" enables API debugging, "false" disables all debugging |
+
+setDebugVerbose
+
+| Parameter | Type    | Default | Description                                                              |
+| --------- | ------- | ------- | ------------------------------------------------------------------------ |
+| enable    | boolean |         | "true" enables API and Verbose debugging, "false" disables all debugging |
+
+```
+"use strict"
+const api = require('growatt')
+api.setDebugApi(true);
+```
+
+or
+
+```
+"use strict"
+const api = require('growatt')
+api.setDebugVerbose(true); //
+```
+
+...
+
+```
+api.setDebugApi(false); //All debug is always turned off. So it's similar to api.setDebugVerbose(false)
+```
+
 ---
 
 ### Promise
