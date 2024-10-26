@@ -1,9 +1,15 @@
+### 0.7.7: Maintenance Release
+
+**Enhancements**
+
+- Added ac charge for TLXH. Thanx to olli0815!
+
 ### 0.7.6: Maintenance Release
 
 **Enhancements**
 
-- Added time slots for TLXH
-- Added Inverter On Off for TLX und TLXH
+- Added time slots for TLXH. Thanx to olli0815!
+- Added Inverter On Off for TLX und TLXH. Thanx to olli0815!
 - Added feature to enable debug
 
 ### 0.7.5: Maintenance Release
